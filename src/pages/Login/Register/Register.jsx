@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { authContext } from '../../../providers/AuthProvider';
 import { useContext } from 'react';
 import { useState } from 'react';
+import useTitle from '../../../Hooks/useTitle';
 
 const Register = () => {
   const { createUser } = useContext(authContext);
@@ -13,7 +14,7 @@ const Register = () => {
     const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(name, email, password);
+
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
@@ -27,6 +28,7 @@ const Register = () => {
     setAccepted(event.target.checked);
     console.log(event.target.checked);
   };
+  useTitle('Register');
   return (
     <Container className="mt-3">
       <Form onSubmit={handleRegister} className="w-25 mx-auto">

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Register from './Register/Register';
 import { useContext } from 'react';
 import { authContext } from '../../providers/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const Login = () => {
   const { signIn } = useContext(authContext);
@@ -23,6 +24,7 @@ const Login = () => {
         console.error(err);
       });
   };
+  useTitle('Login');
   return (
     <Container className="mt-3">
       <Form onSubmit={handleSignIn} className="w-25 mx-auto">

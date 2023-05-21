@@ -23,8 +23,7 @@ const Header = () => {
       <div className="d-flex">
         <Button variant="danger">Latest</Button>
         <Marquee className="text-danger" speed={100} pauseOnHover={true}>
-          I can be a React component, multiple React components, or just some
-          text.
+          Hey Jasmin,this website is just for you.
         </Marquee>
       </div>
     </Container>
